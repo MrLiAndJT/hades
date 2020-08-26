@@ -2,7 +2,12 @@
     <div class="menu-container">
         <el-scrollbar style="height: 100%;">
             <!--  -->
-            <el-menu background-color="#304156" text-color="#d9d3d3" active-text-color="#409eff" router default-active="home">
+            <el-menu background-color="#304156" 
+                text-color="#d9d3d3" 
+                active-text-color="#409eff" 
+                router 
+                default-active="home" 
+                :collapse="menuCollapse">
                 <el-menu-item index="home">
                     <i class="el-icon-s-home"></i>
                     <span>主页</span>
@@ -23,6 +28,7 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex';
     export default {
         data() {
             return {
@@ -31,6 +37,9 @@
         },
         methods: {
 
+        },
+        computed: {
+            ...mapState(['menuCollapse']),
         }
     };
 </script>

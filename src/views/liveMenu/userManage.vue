@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="common-p-m">
         用户管理
     </div>
 </template>

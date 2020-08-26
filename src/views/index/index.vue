@@ -3,11 +3,12 @@
 		<el-container>
 			<!-- <el-header>Header</el-header> -->
 			<el-container>
-				<el-aside width="200px">
+				<el-aside :width="menuCollapse ? '64px' : '200px'">
 					<my-menu></my-menu>
 				</el-aside>
 				<el-main>
-					<main-content></main-content>
+					<my-content></my-content>
+					<!-- <router-view></router-view> -->
 				</el-main>
 			</el-container>
 		</el-container>
@@ -16,8 +17,9 @@
 
 <script>
 	import myMenu from './myMenu.vue';
-	import mainContent from './mainContent.vue';
+	import myContent from './myContent.vue';
 	import commonTitle from './commonTitle.vue';
+	import { mapState } from 'vuex';
     export default {
         data() {
             return {
@@ -29,17 +31,23 @@
 		},
 		components: {
 			myMenu,
-			mainContent,
+			myContent,
 			commonTitle
+		},
+		computed: {
+			...mapState(['menuCollapse']),
 		}
     };
 </script>
 
 <style lang="less" scoped>
 	.el-main {
-		background-color: #f8f8f8f8;
+		background-color: #f5f5f5f8;
 	}
 	.el-main {
 		padding: 0;
+	}
+	.el-aside {
+		transition: all .3s linear;
 	}
 </style>

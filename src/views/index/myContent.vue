@@ -8,6 +8,7 @@
 </template>
 
 <script>
+    import commonTitle from './commonTitle';
     export default {
         data() {
             return {
@@ -16,6 +17,9 @@
         },
         methods: {
 
+        },
+        components: {
+            commonTitle
         }
     };
 </script>
