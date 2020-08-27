@@ -2,7 +2,10 @@
     <div class="main-container">
         <el-scrollbar style="height: 100%;">
             <common-title></common-title>
-            <router-view></router-view>
+            <!-- <router-view></router-view> -->
+            <transition mode="out-in">
+                <router-view></router-view>
+            </transition>
         </el-scrollbar>
     </div>
 </template>

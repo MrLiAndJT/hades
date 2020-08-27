@@ -17,21 +17,23 @@ const routes = [
 	},
 	{
 		path: '/',
-		name: '主页',
+		redirect: '/home',
+		// name: '首页',
 		component: Index,
 		children: [
 			{
 				path: 'home',
+				// redirect: '/home',
 				name: '首页',
 				component: () => import('@/views/home/home.vue'),
 			},
 			{
-				path: 'userManage',
+				path: 'menu/userManage',
 				name: '用户管理',
 				component: () => import('@/views/liveMenu/userManage')
 			},
 			{
-				path: 'dataManage',
+				path: 'menu/dataManage',
 				name: '数据管理',
 				component: () => import('@/views/liveMenu/dataManage')
 			},
